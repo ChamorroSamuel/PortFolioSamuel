@@ -271,7 +271,32 @@
 
 
 
+	document.addEventListener("DOMContentLoaded", function () {
+		const toggle = document.getElementById("language-toggle");
+		const label = document.getElementById("languageLabel");
 
+		// Verifica si hay un idioma guardado en localStorage y ajusta el toggle y el texto
+		if (localStorage.getItem("language") === "es") {
+			toggle.checked = true;
+			label.textContent = "Español";
+		} else {
+			toggle.checked = false;
+			label.textContent = "English";
+		}
+
+		// Evento de cambio en el toggle
+		toggle.addEventListener("change", function () {
+			if (this.checked) {
+				label.textContent = "Español";
+				localStorage.setItem("language", "es"); // Guarda la preferencia en localStorage
+			} else {
+				label.textContent = "English";
+				localStorage.setItem("language", "en");
+			}
+		});
+	});
 
 })(jQuery);
+
+
 

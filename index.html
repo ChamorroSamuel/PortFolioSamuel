@@ -45,235 +45,292 @@
 	          <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
 	          <!--<li class="nav-item"><a href="#blog-section" class="nav-link"><span>My Blog</span></a></li>-->
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+                <li class="nav-item">
+                    <label class="cosmic-toggle " style="margin-top: 5.5px; margin-left: 100px">
+                        <input class="toggle" type="checkbox" id="language-toggle" />
+                        <div class="slider">
+                            <div class="cosmos"></div>
+                            <div class="energy-line"></div>
+                            <div class="energy-line"></div>
+                            <div class="energy-line"></div>
+                            <div class="toggle-orb">
+                                <div class="inner-orb"></div>
+                                <div class="ring"></div>
+                            </div>
+                            <div class="particles">
+                                <div style="--angle: 30deg" class="particle"></div>
+                                <div style="--angle: 60deg" class="particle"></div>
+                                <div style="--angle: 90deg" class="particle"></div>
+                                <div style="--angle: 120deg" class="particle"></div>
+                                <div style="--angle: 150deg" class="particle"></div>
+                                <div style="--angle: 180deg" class="particle"></div>
+                            </div>
+                        </div>
+                    </label><span id="languageLabel">English</span>
+                </li>
 	        </ul>
 	      </div>
 	    </div>
 	  </nav>
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	      <div class="slider-item ">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/.png);">
-	          		<div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h1 class="mb-4 mt-3">I'm <span>Samuel Chamorro</span></h1>
-			            <h2 class="mb-4">Software Engineer</h2>
-			            <p><a href="#contact-section" class="btn btn-primary py-3 px-4">Contact me</a> <a href="#projects-section" class="btn btn-white btn-outline-white py-3 px-4">My Works</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
+    <section id="home-section" class="hero">
+        <div class="home-slider owl-carousel">
+            <div class="slider-item">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end">
+                        <div class="one-forth d-flex align-items-center ftco-animate">
+                            <div class="text">
+                                <span class="subheading" data-lang-en="Hello!" data-lang-es="¡Hola!">Hello!</span>
+                                <h1 class="mb-4 mt-3" data-lang-en="I'm <span>Samuel Chamorro</span>" data-lang-es="Soy <span>Samuel Chamorro</span>">I'm <span>Samuel Chamorro</span></h1>
+                                <h2 class="mb-4" data-lang-en="Software Engineer" data-lang-es="Ingeniero de Software">Software Engineer</h2>
+                                <div class="row">
+                                    <button class="uiverse" href="#contact-section" style="width: 150px">
+                                        <div class="wrapper">
+                                            <span data-lang-en="Contact me" data-lang-es="Contáctame">Contact me</span>
+                                        </div>
+                                    </button>
+                                    <button class="uiverse btn btn-white btn-outline-white" href="#projects-section" style="margin-left: 9px; width: 150px">
+                                        <div class="wrapper">
+                                            <span href="#projects-section" data-lang-en="My Works" data-lang-es="Mis Trabajos">My Works</span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-	      <div class="slider-item">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/.png);">
-	          		<div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h1 class="mb-4 mt-3">I'm a <span>engineer</span> in Peru </h1>
-			            <p><a href="#contact-section" class="btn btn-primary py-3 px-4">Contact me</a> <a href="#projects-section" class="btn btn-white btn-outline-white py-3 px-4">My Works</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
-	    </div>
+            <div class="slider-item">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row d-flex no-gutters slider-text align-items-end justify-content-end">
+                        <div class="one-forth d-flex align-items-center ftco-animate">
+                            <div class="text">
+                                <span class="subheading" data-lang-en="Hello!" data-lang-es="¡Hola!">Hello!</span>
+                                <h1 class="mb-4 mt-3" data-lang-en="I'm a <span>engineer</span> in Peru" data-lang-es="Soy un <span>ingeniero</span> en Perú">I'm a <span>engineer</span> in Peru</h1>
+                                <div class="row">
+                                    <button class="uiverse" href="#contact-section" style="width: 150px">
+                                        <div class="wrapper">
+                                            <span data-lang-en="Contact me" data-lang-es="Contáctame">Contact me</span>
+                                        </div>
+                                    </button>
+                                    <button class="uiverse btn btn-white btn-outline-white" href="#projects-section" style="margin-left: 9px; width: 150px">
+                                        <div class="wrapper">
+                                            <span href="#projects-section" data-lang-en="My Works" data-lang-es="Mis Trabajos">My Works</span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    	<div class="container">
-    		<div class="row d-flex">
-    			<div class="col-md-6 col-lg-5 d-flex">
-    				<div class="img-about img d-flex align-items-stretch">
-    					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/.png);">
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-    				<div class="row justify-content-start pb-3">
-		          <div class="col-md-12 heading-section ftco-animate">
-		          	<h1 class="big">About</h1>
-		            <h2 class="mb-4">About Me</h2>
-		            <p>I am Samuel Rolando Chamorro Torres, a dedicated Software Engineering student at UPC, passionate about solving real-world problems through innovative software solutions. With a strong foundation in programming and software architecture, I am continually enhancing my skills in web and mobile development, AI, and cloud technologies.</p>
-		            <ul class="about-info mt-4 px-md-0 px-2">
-		            	<li class="d-flex"><span>Name:</span> <span>Samuel Rolando Chamorro Torres</span></li>
-		            	<li class="d-flex"><span>Date of birth:</span> <span>March 19, 2003</span></li>
-		            	<li class="d-flex"><span>Address:</span> <span>Lima, Perú</span></li>
-		            	<li class="d-flex"><span>Email:</span> <span>theteacher2017@gmail.com</span></li>
-		            	<li class="d-flex"><span>Phone: </span> <span>+51-913-254-120</span></li>
-		            </ul>
-		          </div>
-		        </div>
-	          <div class="counter-wrap ftco-animate d-flex mt-md-3">
-              <div class="text">
-              	<p class="mb-4">
-	                <span class="number" data-number="8">0</span>
-	                <span>Project complete</span>
-                </p>
-                <p><a href="#" class="btn btn-primary py-3 px-3">Download CV</a></p>
-              </div>
-	          </div>
-	        </div>
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-md-6 col-lg-5 d-flex">
+                    <div class="img-about img d-flex align-items-stretch">
+                        <div class="overlay"></div>
+                        <div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/.png);">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+                    <div class="row justify-content-start pb-3">
+                        <div class="col-md-12 heading-section ftco-animate">
+                            <h1 class="big" data-lang-en="About" data-lang-es="Acerca de">About</h1>
+                            <h2 class="mb-4" data-lang-en="About Me" data-lang-es="Sobre Mí">About Me</h2>
+                            <p data-lang-en="I am Samuel Rolando Chamorro Torres, a dedicated Software Engineering student at UPC, passionate about solving real-world problems through innovative software solutions. With a strong foundation in programming and software architecture, I am continually enhancing my skills in web and mobile development, AI, and cloud technologies."
+                               data-lang-es="Soy Samuel Rolando Chamorro Torres, un estudiante dedicado de Ingeniería de Software en la UPC, apasionado por resolver problemas del mundo real a través de soluciones de software innovadoras. Con una sólida base en programación y arquitectura de software, estoy mejorando continuamente mis habilidades en desarrollo web y móvil, inteligencia artificial y tecnologías en la nube.">
+                                I am Samuel Rolando Chamorro Torres, a dedicated Software Engineering student at UPC, passionate about solving real-world problems through innovative software solutions...
+                            </p>
+                            <ul class="about-info mt-4 px-md-0 px-2">
+                                <li class="d-flex"><span data-lang-en="Name:" data-lang-es="Nombre:">Name:</span> <span>Samuel Rolando Chamorro Torres</span></li>
+                                <li class="d-flex"><span data-lang-en="Date of birth:" data-lang-es="Fecha de nacimiento:">Date of birth:</span> <span>March 19, 2003</span></li>
+                                <li class="d-flex"><span data-lang-en="Address:" data-lang-es="Dirección:">Address:</span> <span>Lima, Perú</span></li>
+                                <li class="d-flex"><span data-lang-en="Email:" data-lang-es="Correo electrónico:">Email:</span> <span>theteacher2017@gmail.com</span></li>
+                                <li class="d-flex"><span data-lang-en="Phone:" data-lang-es="Teléfono:">Phone:</span> <span>+51-913-254-120</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="counter-wrap ftco-animate d-flex mt-md-3">
+                        <div class="text">
+                            <p class="mb-4">
+                                <span class="number" data-number="8">0</span>
+                                <span data-lang-en="Project complete" data-lang-es="Proyectos completados">Project complete</span>
+                            </p>
+                            <p><a href="https://drive.google.com/uc?export=download&id=1XN0g-eZbPnd5zy8N72czRVHvNPJBj4Wk" class="btn btn-primary py-3 px-3" data-lang-en="Download CV" data-lang-es="Descargar CV">Download CV</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    	</div>
     </section>
 
     <section class="ftco-section ftco-no-pb" id="resume-section">
-    	<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Experience</h1>
-            <h2 class="mb-4">Education & Experience</h2>
-            <p>I am a Software Engineering student at UPC and have practical knowledge in software development and emerging technologies such as the IOT and Artificial Intelligence. My training and certifications have provided me with the necessary skills to contribute to innovative software solutions.</p>
-          </div>
-        </div>
-    		<div class="row">
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2020-2025</span>
-    					<h2>Grado de Universidad</h2>
-    					<span class="position">Universidad Peruana de Ciencias Aplicadas</span>
-    					<p class="mt-4">Estudiante de Ingeniería de Software en la UPC, desarrollando habilidades en programación, arquitectura de software, análisis de datos y desarrollo de aplicaciones web y móviles. He participado en diversos proyectos, incluyendo la creación de soluciones IoT y aplicaciones basadas en inteligencia artificial.</p>
-    				</div>
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2022-2023</span>
-    					<h2>Learn SQL Basics for Data Science</h2>
-    					<span class="position">University of California</span>
-    					<p class="mt-4">Curso de fundamentos de SQL aplicado a la ciencia de datos, adquiriendo competencias en la manipulación y análisis de datos para el procesamiento de grandes volúmenes de información en entornos empresariales.</p>
-    				</div>
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2023-2024</span>
-    					<h2>Decentralized Applications (Dapps)</h2>
-    					<span class="position">University at Buffalo</span>
-    					<p class="mt-4">Formación en aplicaciones descentralizadas utilizando tecnología blockchain, con énfasis en el desarrollo de contratos inteligentes y soluciones seguras para sistemas distribuidos.</p>
-    				</div>
-    			</div>
+        <div class="container">
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-10 heading-section text-center ftco-animate">
+                    <h1 class="big big-2" data-lang-en="Experience" data-lang-es="Experiencia">Experience</h1>
+                    <h2 class="mb-4" data-lang-en="Education & Experience" data-lang-es="Educación & Experiencia">Education & Experience</h2>
+                    <p data-lang-en="I am a Software Engineering student at UPC and have practical knowledge in software development and emerging technologies such as the IOT and Artificial Intelligence. My training and certifications have provided me with the necessary skills to contribute to innovative software solutions."
+                       data-lang-es="Soy estudiante de Ingeniería de Software en la UPC y tengo conocimientos prácticos en desarrollo de software y tecnologías emergentes como IoT e Inteligencia Artificial. Mi formación y certificaciones me han proporcionado las habilidades necesarias para contribuir a soluciones innovadoras de software.">
+                        I am a Software Engineering student at UPC and have practical knowledge in software development and emerging technologies such as the IOT and Artificial Intelligence...
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="resume-wrap ftco-animate">
+                        <span class="date">2020-2025</span>
+                        <h2 data-lang-en="University Degree" data-lang-es="Grado de Universidad">University Degree</h2>
+                        <span class="position" data-lang-en="Peruvian University of Applied Sciences" data-lang-es="Universidad Peruana de Ciencias Aplicadas">Universidad Peruana de Ciencias Aplicadas</span>
+                        <p class="mt-4" data-lang-en="Software Engineering student at UPC, developing skills in programming, software architecture, data analysis, and web and mobile application development. I have participated in various projects, including the creation of IoT solutions and AI-based applications."
+                           data-lang-es="Estudiante de Ingeniería de Software en la UPC, desarrollando habilidades en programación, arquitectura de software, análisis de datos y desarrollo de aplicaciones web y móviles. He participado en diversos proyectos, incluyendo la creación de soluciones IoT y aplicaciones basadas en inteligencia artificial.">
+                            Software Engineering student at UPC, developing skills in programming, software architecture, data analysis, and web and mobile application development. I have participated in various projects, including the creation of IoT solutions and AI-based applications.
+                        </p>
+                    </div>
+                    <div class="resume-wrap ftco-animate">
+                        <span class="date">2022-2023</span>
+                        <h2 data-lang-en="Learn SQL Basics for Data Science" data-lang-es="Learn SQL Basics for Data Science">Learn SQL Basics for Data Science</h2>
+                        <span class="position" data-lang-en="University of California" data-lang-es="Universidad de California">University of California</span>
+                        <p class="mt-4" data-lang-en="SQL fundamentals course applied to data science, acquiring competencies in data manipulation and analysis for processing large volumes of information in business environments."
+                           data-lang-es="Curso de fundamentos de SQL aplicado a la ciencia de datos, adquiriendo competencias en la manipulación y análisis de datos para el procesamiento de grandes volúmenes de información en entornos empresariales.">
+                            SQL fundamentals course applied to data science, acquiring competencies in data manipulation and analysis for processing large volumes of information in business environments.
+                        </p>
+                    </div>
+                    <div class="resume-wrap ftco-animate">
+                        <span class="date">2023-2024</span>
+                        <h2 data-lang-en="Decentralized Applications (Dapps)" data-lang-es="Decentralized Applications (Dapps">Decentralized Applications (Dapps)</h2>
+                        <span class="position" data-lang-en="University at Buffalo" data-lang-es="Universidad de Buffalo">University at Buffalo</span>
+                        <p class="mt-4" data-lang-en="Training in decentralized applications using blockchain technology, with an emphasis on developing smart contracts and secure solutions for distributed systems."
+                           data-lang-es="Formación en aplicaciones descentralizadas utilizando tecnología blockchain, con énfasis en el desarrollo de contratos inteligentes y soluciones seguras para sistemas distribuidos.">
+                            Training in decentralized applications using blockchain technology, with an emphasis on developing smart contracts and secure solutions for distributed systems.
+                        </p>
+                    </div>
+                </div>
 
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2023-2024</span>
-    					<h2>Art and Science of Machine Learning</h2>
-    					<span class="position">Google Cloud</span>
-    					<p class="mt-4">Curso especializado en técnicas avanzadas de machine learning, aprendiendo a implementar modelos de aprendizaje automático y aplicarlos en contextos reales, optimizando soluciones basadas en inteligencia artificial.</p>
-    				</div>
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2023-2024</span>
-    					<h2>Scrum Fundamentals Certificated</h2>
-    					<span class="position">Scrum Study</span>
-    					<p class="mt-4">Certificación en fundamentos de Scrum, centrada en la gestión ágil de proyectos para la entrega eficiente de productos de software, siguiendo los principios de desarrollo incremental y colaborativo.</p>
-    				</div>
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2017-2018</span>
-    					<h2>UI/UX Designer</h2>
-    					<span class="position">Cambridge University</span>
-    					<p class="mt-4">Curso especializado en diseño UI/UX, centrado en la creación de interfaces intuitivas y experiencias de usuario centradas en el usuario final, mejorando la interacción y usabilidad en aplicaciones web y móviles.</p>
-    				</div>
-    			</div>
-    		</div>
-    		<div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
-    			</div>
-    		</div>
-    	</div>
+                <div class="col-md-6">
+                    <div class="resume-wrap ftco-animate">
+                        <span class="date">2023-2024</span>
+                        <h2 data-lang-en="Art and Science of Machine Learning" data-lang-es="Art and Science of Machine Learning">Art and Science of Machine Learning</h2>
+                        <span class="position" data-lang-en="Google Cloud" data-lang-es="Google Cloud">Google Cloud</span>
+                        <p class="mt-4" data-lang-en="Specialized course on advanced machine learning techniques, learning to implement and apply machine learning models in real contexts, optimizing AI-based solutions."
+                           data-lang-es="Curso especializado en técnicas avanzadas de machine learning, aprendiendo a implementar modelos de aprendizaje automático y aplicarlos en contextos reales, optimizando soluciones basadas en inteligencia artificial.">
+                            Specialized course on advanced machine learning techniques, learning to implement and apply machine learning models in real contexts, optimizing AI-based solutions.
+                        </p>
+                    </div>
+                    <div class="resume-wrap ftco-animate">
+                        <span class="date">2023-2024</span>
+                        <h2 data-lang-en="Scrum Fundamentals Certificated" data-lang-es="Scrum Fundamentals Certificated">Scrum Fundamentals Certificated</h2>
+                        <span class="position" data-lang-en="Scrum Study" data-lang-es="Scrum Study">Scrum Study</span>
+                        <p class="mt-4" data-lang-en="Certification in Scrum fundamentals, focused on agile project management for efficient software product delivery, following principles of incremental and collaborative development."
+                           data-lang-es="Certificación en fundamentos de Scrum, centrada en la gestión ágil de proyectos para la entrega eficiente de productos de software, siguiendo los principios de desarrollo incremental y colaborativo.">
+                            Certification in Scrum fundamentals, focused on agile project management for efficient software product delivery, following principles of incremental and collaborative development.
+                        </p>
+                    </div>
+                    <div class="resume-wrap ftco-animate">
+                        <span class="date">2017-2018</span>
+                        <h2 data-lang-en="UI/UX Designer" data-lang-es="UI/UX Designer">UI/UX Designer</h2>
+                        <span class="position" data-lang-en="Cambridge University" data-lang-es="Universidad de Cambridge">Cambridge University</span>
+                        <p class="mt-4" data-lang-en="Specialized course in UI/UX design, focused on creating intuitive interfaces and user-centered experiences, improving interaction and usability in web and mobile applications."
+                           data-lang-es="Curso especializado en diseño UI/UX, centrado en la creación de interfaces intuitivas y experiencias de usuario centradas en el usuario final, mejorando la interacción y usabilidad en aplicaciones web y móviles.">
+                            Specialized course in UI/UX design, focused on creating intuitive interfaces and user-centered experiences, improving interaction and usability in web and mobile applications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6 text-center ftco-animate">
+                    <p><a href="https://drive.google.com/uc?export=download&id=1XN0g-eZbPnd5zy8N72czRVHvNPJBj4Wk" class="btn btn-primary py-4 px-5" data-lang-en="Download CV" data-lang-es="Descargar CV">Download CV</a></p>
+                </div>
+            </div>
+        </div>
     </section>
+
 
     <section class="ftco-section" id="services-section">
-    	<div class="container">
-    		<div class="row justify-content-center py-5 mt-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Services</h1>
-            <h2 class="mb-4">Services</h2>
-            <p>I provide comprehensive services in software development, including web and app design, and cloud solutions. My focus is on delivering high-quality, user-centric solutions tailored to meet your project needs.</p>
-          </div>
+        <div class="container">
+            <div class="row justify-content-center py-5 mt-5">
+                <div class="col-md-12 heading-section text-center ftco-animate">
+                    <h1 class="big big-2" data-lang-en="Services" data-lang-es="Servicios">Services</h1>
+                    <h2 class="mb-4" data-lang-en="Services" data-lang-es="Servicios">Services</h2>
+                    <p data-lang-en="I provide comprehensive services in software development, including web and app design, and cloud solutions. My focus is on delivering high-quality, user-centric solutions tailored to meet your project needs."
+                       data-lang-es="Brindo servicios integrales en desarrollo de software, incluyendo diseño web y de aplicaciones, y soluciones en la nube. Mi enfoque está en ofrecer soluciones de alta calidad y centradas en el usuario, adaptadas a las necesidades de tu proyecto.">
+                        I provide comprehensive services in software development, including web and app design, and cloud solutions. My focus is on delivering high-quality, user-centric solutions tailored to meet your project needs.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 text-center d-flex ftco-animate">
+                    <a href="#" class="services-1">
+                        <span class="icon"><i class="flaticon-analysis"></i></span>
+                        <div class="desc">
+                            <h3 class="mb-5" data-lang-en="Web Design" data-lang-es="Diseño Web">Web Design</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 text-center d-flex ftco-animate">
+                    <a href="#" class="services-1">
+                        <span class="icon"><i class="flaticon-flasks"></i></span>
+                        <div class="desc">
+                            <h3 class="mb-5" data-lang-en="Software Development" data-lang-es="Desarrollo de Software">Software Development</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 text-center d-flex ftco-animate">
+                    <a href="#" class="services-1">
+                        <span class="icon"><i class="flaticon-ideas"></i></span>
+                        <div class="desc">
+                            <h3 class="mb-5" data-lang-en="App Development" data-lang-es="Desarrollo de Aplicaciones">App Development</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 text-center d-flex ftco-animate">
+                    <a href="#" class="services-1">
+                        <span class="icon"><i class="flaticon-analysis"></i></span>
+                        <div class="desc">
+                            <h3 class="mb-5" data-lang-en="Systems Integration" data-lang-es="Integración de Sistemas">Systems Integration</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 text-center d-flex ftco-animate">
+                    <a href="#" class="services-1">
+                        <span class="icon"><i class="flaticon-flasks"></i></span>
+                        <div class="desc">
+                            <h3 class="mb-5" data-lang-en="UX/UI Design" data-lang-es="Diseño UX/UI">UX/UI Design</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 text-center d-flex ftco-animate">
+                    <a href="#" class="services-1">
+                        <span class="icon"><i class="flaticon-ideas"></i></span>
+                        <div class="desc">
+                            <h3 class="mb-5" data-lang-en="Cloud Solutions" data-lang-es="Soluciones en la Nube">Cloud Solutions</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-    		<div class="row">
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Web Design</h3>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-flasks"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Software Development</h3>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">App Development</h3>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Systems Integration</h3>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-flasks"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">UX/UI Design</h3>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Cloud Solutions</h3>
-							</div>
-						</a>
-					</div>
-				</div>
-    	</div>
     </section>
 
-		
-		<section class="ftco-section" id="skills-section">
-			<div class="container">
-				<div class="row justify-content-center pb-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Skills</h1>
-            <h2 class="mb-4">My Skills</h2>
-            <p>I possess a diverse set of technical skills essential for software development. My expertise ranges from frontend technologies and database management to design tools, enabling me to tackle various aspects of development projects effectively.</p>
-          </div>
-        </div>
+
+    <section class="ftco-section" id="skills-section">
+        <div class="container">
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-12 heading-section text-center ftco-animate">
+                    <h1 class="big big-2" data-lang-en="Skills" data-lang-es="Habilidades">Skills</h1>
+                    <h2 class="mb-4" data-lang-en="My Skills" data-lang-es="Mis Habilidades">My Skills</h2>
+                    <p data-lang-en="I possess a diverse set of technical skills essential for software development. My expertise ranges from frontend technologies and database management to design tools, enabling me to tackle various aspects of development projects effectively."
+                       data-lang-es="Poseo un conjunto diverso de habilidades técnicas esenciales para el desarrollo de software. Mi experiencia abarca desde tecnologías frontend y gestión de bases de datos hasta herramientas de diseño, lo que me permite abordar eficazmente diversos aspectos de los proyectos de desarrollo.">
+                        I possess a diverse set of technical skills essential for software development. My expertise ranges from frontend technologies and database management to design tools, enabling me to tackle various aspects of development projects effectively.
+                    </p>
+                </div>
+            </div>
 				<div class="row">
 					<div class="col-md-6 animate-box">
 						<div class="progress-wrap ftco-animate">
@@ -281,7 +338,7 @@
 							<div class="progress">
 							 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
 							  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-							    <span>85%</span>
+							    <span>INTERMEDIO</span>
 							  	</div>
 							</div>
 						</div>
@@ -292,7 +349,7 @@
 							<div class="progress">
 							 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="85"
 							  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-							    <span>75%</span>
+							    <span>INTERMEDIO</span>
 							  	</div>
 							</div>
 						</div>
@@ -303,7 +360,7 @@
 							<div class="progress">
 							 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="95"
 							  	aria-valuemin="0" aria-valuemax="100" style="width:65%">
-							    <span>65%</span>
+							    <span>INTERMEDIO</span>
 							  	</div>
 							</div>
 						</div>
@@ -314,7 +371,7 @@
 							<div class="progress">
 							 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
 							  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-							    <span>75%</span>
+							    <span>INTERMEDIO</span>
 							  	</div>
 							</div>
 						</div>
@@ -325,7 +382,7 @@
 							<div class="progress">
 							 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
 							  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-							    <span>80%</span>
+							    <span>INTERMEDIO</span>
 							  	</div>
 							</div>
 						</div>
@@ -336,7 +393,7 @@
                             <div class="progress">
                                 <div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
                                      aria-valuemin="0" aria-valuemax="100" style="width:65%">
-                                    <span>65%</span>
+                                    <span>INTERMEDIO</span>
                                 </div>
                             </div>
                         </div>
@@ -347,7 +404,7 @@
                             <div class="progress">
                                 <div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
                                      aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                    <span>70%</span>
+                                    <span>INTERMEDIO</span>
                                 </div>
                             </div>
                         </div>
@@ -358,7 +415,7 @@
 							<div class="progress">
 							 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="80"
 							  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-							    <span>80%</span>
+							    <span>INTERMEDIO</span>
 							  	</div>
 							</div>
 						</div>
@@ -366,69 +423,72 @@
 				</div>
 			</div>
 		</section>
- 
+
 
     <section class="ftco-section ftco-project" id="projects-section">
-    	<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">My Projects</h2>
-            <p>I have worked on a variety of projects that showcase my skills in software development. Each project highlights my ability to create practical solutions and drive innovation.</p>
-          </div>
+        <div class="container">
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-12 heading-section text-center ftco-animate">
+                    <h1 class="big big-2" data-lang-en="Projects" data-lang-es="Proyectos">Projects</h1>
+                    <h2 class="mb-4" data-lang-en="My Projects" data-lang-es="Mis Proyectos">My Projects</h2>
+                    <p data-lang-en="I have worked on a variety of projects that showcase my skills in software development. Each project highlights my ability to create practical solutions and drive innovation."
+                       data-lang-es="He trabajado en una variedad de proyectos que muestran mis habilidades en desarrollo de software. Cada proyecto resalta mi capacidad para crear soluciones prácticas e impulsar la innovación.">
+                        I have worked on a variety of projects that showcase my skills in software development. Each project highlights my ability to create practical solutions and drive innovation.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/Collectioner.jpg);">
+                        <div class="overlay"></div>
+                        <div class="text text-center p-4">
+                            <h3><a href="Collectioner.html">Collectioneer</a></h3>
+                            <span data-lang-en="App Mobile" data-lang-es="Aplicación Móvil">App Mobile</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/CarUnity.jpg);">
+                        <div class="overlay"></div>
+                        <div class="text text-center p-4">
+                            <h3><a href="CarUnity.html">CarUnity</a></h3>
+                            <span data-lang-en="App Web" data-lang-es="Aplicación Web">App Web</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/Credi.jpg);">
+                        <div class="overlay"></div>
+                        <div class="text text-center p-4">
+                            <h3><a href="CarCreditWizard.html">CarCredit Wizard</a></h3>
+                            <span data-lang-en="App Web" data-lang-es="Aplicación Web">App Web</span>
+                        </div>
+                    </div>
+
+                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/Elderly.jpg);">
+                        <div class="overlay"></div>
+                        <div class="text text-center p-4">
+                            <h3><a href="ElderlyCare.html">Elderly Care App</a></h3>
+                            <span data-lang-en="App Web & Mobile" data-lang-es="Aplicación Web & Móvil">App Web & Mobile</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/DittoBox.jpg);">
+                                <div class="overlay"></div>
+                                <div class="text text-center p-4">
+                                    <h3><a href="DittoBox.html">DittoBox</a></h3>
+                                    <span data-lang-en="App Web & Mobile" data-lang-es="Aplicación Web & Móvil">App Web & Mobile</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    		<div class="row">
-    			<div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/Collectioner.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="Collectioner.html">Collectioneer</a></h3>
-	    					<span>App Mobile</span>
-	    				</div>
-    				</div>
-  				</div>
-  				<div class="col-md-8">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/CarUnity.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-                            <h3><a href="#">CarUnity</a></h3>
-                            <span>App Web</span>
-	    				</div>
-    				</div>
-  				</div>
-
-    			<div class="col-md-8">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/Credi.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-                            <h3><a href="#">CarCredit Wizard</a></h3>
-                            <span>App Web</span>
-	    				</div>
-    				</div>
-
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/Elderly.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-                            <h3><a href="#">Elderly Care App</a></h3>
-                            <span>App Web & Mobile</span>
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-4">
-    				<div class="row">
-    					<div class="col-md-12">
-		    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/DittoBox.jpg);">
-		    					<div class="overlay"></div>
-			    				<div class="text text-center p-4">
-                                    <h3><a href="#">DittoBox</a></h3>
-                                    <span>App Web & Mobile</span>
-			    				</div>
-		    				</div>
-	    				</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
     </section>
 
 <!--
@@ -690,12 +750,41 @@
       </div>
     </footer>
     
-  
+
+
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+          <script>
+              const translations = {
+                  en: {
+                      home: "Home",
+                      about: "About",
+                      resume: "Resume",
+                      services: "Services",
+                      skills: "Skills",
+                      projects: "Projects",
+                      contact: "Contact"
+                  },
+                  es: {
+                      home: "Inicio",
+                      about: "Sobre mí",
+                      resume: "Currículum",
+                      services: "Servicios",
+                      skills: "Habilidades",
+                      projects: "Proyectos",
+                      contact: "Contacto"
+                  }
+              };
 
+              document.getElementById('language-toggle').addEventListener('change', function() {
+                  const isSpanish = this.checked; // Si está activado, cambia a español
+                  document.querySelectorAll('[data-lang-en]').forEach(element => {
+                      element.innerHTML = isSpanish ? element.getAttribute('data-lang-es') : element.getAttribute('data-lang-en');
+                  });
+              });
+          </script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
