@@ -42,6 +42,11 @@
   box-shadow: 0 0 14px var(--c-shadow);
 }
 
+a.uiverse, a.uiverse:hover, a.uiverse:focus {
+  text-decoration: none;
+  color: var(--c-color);
+}
+
 .uiverse:before {
   content: "";
   pointer-events: none;
