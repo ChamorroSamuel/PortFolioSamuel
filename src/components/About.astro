@@ -1,0 +1,110 @@
+---
+import { sectionIds, useT, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useT(lang);
+const highlight = new Set(t('about.highlight').split(','));
+const words = t('about.text')
+  .split(' ')
+  .map((w) => ({ w, hl: highlight.has(w.replace(/[.,;:!?]/g, '')) }));
+const facts = [
+  [t('about.base'), t('about.baseValue')],
+  [t('about.study'), t('about.studyValue')],
+  [t('about.focus'), t('about.focusValue')],
+];
+---
+
+<section class="section about" id={sectionIds[lang].about} aria-labelledby="about-title">
+  <div class="wrap grid">
+    <div class="main">
+      <h2 id="about-title" class="eyebrow">{t('about.eyebrow')}</h2>
+      <p class="reveal" data-reveal>
+        {
+          words.map(({ w, hl }) => (
+            <>
+              <span data-word class:list={{ hl }}>
+                {w}
+              </span>{' '}
+            </>
+          ))
+        }
+      </p>
+    </div>
+    <dl class="facts">
+      {
+        facts.map(([k, v]) => (
+          <div>
+            <dt>{k}</dt>
+            <dd>{v}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+  <!-- TODO: agregar una foto real de Samuel aquí -->
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    gap: 48px;
+  }
+  @media (min-width: 980px) {
+    .grid {
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+      align-items: end;
+    }
+  }
+  .main {
+    display: grid;
+    gap: 24px;
+  }
+  .reveal {
+    font-size: clamp(1.6rem, 3.6vw, 3rem);
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    max-width: 26ch;
+  }
+  .reveal span {
+    transition: opacity 0.35s, color 0.35s;
+  }
+  .reveal .hl {
+    color: var(--sodium);
+  }
+  .reveal:global(.is-armed) span {
+    opacity: 0.2;
+  }
+  .reveal:global(.is-armed) span:global(.is-lit) {
+    opacity: 1;
+  }
+  .reveal:global(.is-armed) .hl:not(.is-lit) {
+    color: var(--bone);
+  }
+  .facts {
+    margin: 0;
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .facts div {
+    display: grid;
+    gap: 4px;
+    padding-block: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  dt {
+    font-family: var(--f-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--fog-dim);
+  }
+  dd {
+    margin: 0;
+    font-size: 17px;
+  }
+</style>

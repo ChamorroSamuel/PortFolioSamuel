@@ -1,0 +1,53 @@
+---
+import { site } from '../data/site';
+import { useT, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useT(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p>© {year} {site.name}. {t('footer.made')}</p>
+    <ul>
+      <li><a href={site.github} target="_blank" rel="noopener">GitHub</a></li>
+      {site.linkedin && <li><a href={site.linkedin} target="_blank" rel="noopener">LinkedIn</a></li>}
+      <li><a href={`mailto:${site.email}`}>Email</a></li>
+      <li><a href="#main">{t('footer.top')} ↑</a></li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--line);
+    padding-block: 28px calc(28px + env(safe-area-inset-bottom, 0px));
+    font-size: 14px;
+    color: var(--fog-dim);
+  }
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px 32px;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+  }
+  a {
+    color: var(--fog);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--sodium);
+  }
+</style>

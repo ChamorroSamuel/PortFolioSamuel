@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import CasePage from '../../../components/CasePage.astro';
+import { langOf, slugOf } from '../../../i18n/ui';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('projects', (e) => langOf(e.id) === 'en');
+  return entries.map((entry) => ({ params: { slug: slugOf(entry.id) }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+---
+
+<CasePage lang="en" entry={entry} />
