@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import { paths, ui } from '../i18n/ui';
+---
+
+<Base lang="es" altHref={paths.home('en')} title="404">
+  <section class="nf wrap">
+    <p class="eyebrow">404</p>
+    <h1 class="display">{ui.es['404.title']}</h1>
+    <p class="lede">{ui.es['404.text']}</p>
+    <p class="lede" lang="en">{ui.en['404.title']}. {ui.en['404.text']}</p>
+    <div class="ctas">
+      <a class="btn btn-sodium" href={paths.home('es')}>{ui.es['404.back']}</a>
+      <a class="btn btn-ghost" href={paths.home('en')} lang="en">{ui.en['404.back']}</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf {
+    min-height: 100svh;
+    display: grid;
+    align-content: center;
+    gap: 22px;
+    padding-top: var(--nav-h);
+  }
+  .display {
+    font-size: clamp(3rem, 9vw, 7.5rem);
+    max-width: 14ch;
+  }
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+  }
+</style>

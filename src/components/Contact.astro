@@ -1,0 +1,116 @@
+---
+import { site } from '../data/site';
+import { sectionIds, useT, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useT(lang);
+---
+
+<section class="section contact" id={sectionIds[lang].contact} aria-labelledby="contact-title">
+  <div class="wrap inner">
+    <p class="eyebrow">{t('contact.eyebrow')}</p>
+    <h2 id="contact-title" class="display" data-fog>{t('contact.title')}</h2>
+    <p class="lede">{t('contact.text')}</p>
+
+    <div class="mail">
+      <a id="contact-email" href={`mailto:${site.email}`}>{site.email}</a>
+      <button
+        class="btn btn-ghost"
+        type="button"
+        data-copy={site.email}
+        data-copy-status="contact-status"
+        data-copy-select="contact-email"
+        data-copied={t('contact.copied')}
+        data-copy-fail={t('contact.copyFail')}
+      >
+        {t('contact.copy')}
+      </button>
+      <span id="contact-status" class="status" role="status"></span>
+    </div>
+
+    <ul class="channels">
+      <li><a href={site.github} target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
+      {
+        site.linkedin && (
+          <li>
+            <a href={site.linkedin} target="_blank" rel="noopener">
+              LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+        )
+      }
+      <li><a href={site.cv} target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .contact {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(60% 55% at 50% 0%, rgba(255, 189, 57, 0.1), transparent 70%);
+  }
+  .inner {
+    display: grid;
+    gap: 22px;
+    justify-items: start;
+  }
+  .display {
+    font-size: clamp(4rem, 15vw, 13rem);
+    /* El «¿» baja de la línea base; sin esto pisa el párrafo de abajo. */
+    line-height: 1.02;
+  }
+  .mail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 20px;
+    margin-top: 16px;
+  }
+  .mail a {
+    font-size: clamp(1.3rem, 4vw, 2.8rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    background: linear-gradient(var(--sodium), var(--sodium)) 0 100% / 0% 2px no-repeat;
+    transition: background-size 0.5s var(--ease), color 0.3s;
+    word-break: break-all;
+  }
+  .mail a:hover {
+    background-size: 100% 2px;
+    color: var(--sodium);
+  }
+  .status {
+    font-size: 14px;
+    color: var(--sodium);
+    min-height: 1.4em;
+  }
+  .channels {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .channels a {
+    display: inline-flex;
+    gap: 6px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    text-decoration: none;
+    font-family: var(--f-mono);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: border-color 0.25s, color 0.25s;
+  }
+  .channels a:hover {
+    border-color: var(--sodium);
+    color: var(--sodium);
+  }
+</style>

@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Hero from './Hero.astro';
+import Projects from './Projects.astro';
+import Marquee from './Marquee.astro';
+import Stack from './Stack.astro';
+import Experience from './Experience.astro';
+import About from './About.astro';
+import Contact from './Contact.astro';
+import { langOf, otherLang, paths, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const projects = (await getCollection('projects', (e) => langOf(e.id) === lang)).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base lang={lang} altHref={paths.home(otherLang(lang))}>
+  <Hero lang={lang} />
+  <Projects lang={lang} projects={projects} />
+  <Marquee lang={lang} />
+  <Stack lang={lang} projects={projects} />
+  <Experience lang={lang} />
+  <About lang={lang} />
+  <Contact lang={lang} />
+</Base>
+
+<script>
+  import { initHero } from '../scripts/hero';
+  import { initGraph, initMarquee, initPinned, initReveal, initTilt, initTimeline } from '../scripts/interactions';
+
+  const q = (s: string) => document.querySelector<HTMLElement>(s);
+  const hero = q('[data-hero]');
+  const projects = q('[data-projects]');
+  const marquee = q('[data-marquee]');
+  const graph = q('[data-graph]');
+  const timeline = q('[data-timeline]');
+  const reveal = q('[data-reveal]');
+
+  // En orden de aparición: el pin de proyectos cambia la posición de todo lo que viene después.
+  if (hero) initHero(hero);
+  if (projects) {
+    initPinned(projects);
+    initTilt(projects);
+  }
+  if (marquee) initMarquee(marquee);
+  if (graph) initGraph(graph);
+  if (timeline) initTimeline(timeline);
+  if (reveal) initReveal(reveal);
+</script>

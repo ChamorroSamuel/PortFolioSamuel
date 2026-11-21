@@ -1,0 +1,156 @@
+---
+import { getCollection } from 'astro:content';
+import { site } from '../data/site';
+import { langOf, otherLang, paths, sectionIds, slugOf, useT, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  altHref: string;
+}
+const { lang, altHref } = Astro.props;
+const t = useT(lang);
+const ids = sectionIds[lang];
+const home = paths.home(lang);
+const projects = (await getCollection('projects', (e) => langOf(e.id) === lang)).sort((a, b) => a.data.order - b.data.order);
+
+type Item = { label: string; kind: string; href?: string; action?: string; external?: boolean; value?: string };
+const items: Item[] = [
+  { label: t('palette.home'), kind: t('palette.section'), href: `${home}#main` },
+  { label: t('nav.projects'), kind: t('palette.section'), href: `${home}#${ids.projects}` },
+  { label: t('nav.stack'), kind: t('palette.section'), href: `${home}#${ids.stack}` },
+  { label: t('nav.experience'), kind: t('palette.section'), href: `${home}#${ids.experience}` },
+  { label: t('nav.about'), kind: t('palette.section'), href: `${home}#${ids.about}` },
+  { label: t('nav.contact'), kind: t('palette.section'), href: `${home}#${ids.contact}` },
+  ...projects.map((p) => ({ label: p.data.title, kind: t('palette.project'), href: paths.project(lang, slugOf(p.id)) })),
+  { label: t('palette.copyEmail'), kind: t('palette.action'), action: 'copy-email', value: site.email },
+  { label: t('palette.cv'), kind: t('palette.action'), href: site.cv, external: true },
+  { label: t('palette.github'), kind: t('palette.action'), href: site.github, external: true },
+  ...(site.linkedin ? [{ label: t('palette.linkedin'), kind: t('palette.action'), href: site.linkedin, external: true }] : []),
+  { label: t('palette.switch'), kind: t('palette.action'), href: altHref },
+];
+---
+
+<dialog class="palette" data-palette aria-label={t('palette.label')} lang={lang}>
+  <div class="box">
+    <input
+      type="text"
+      data-palette-input
+      placeholder={t('palette.placeholder')}
+      autocomplete="off"
+      spellcheck="false"
+      role="combobox"
+      aria-expanded="true"
+      aria-controls="palette-list"
+      aria-autocomplete="list"
+    />
+    <ul id="palette-list" role="listbox" data-palette-list aria-label={t('palette.label')}>
+      {
+        items.map((it, i) => (
+          <li
+            id={`cmd-${i}`}
+            role="option"
+            aria-selected="false"
+            data-href={it.href}
+            data-action={it.action}
+            data-value={it.value}
+            data-external={it.external ? '1' : undefined}
+            data-copied={it.action ? t('contact.copied') : undefined}
+            data-copy-fail={it.action ? t('contact.copyFail') : undefined}
+            lang={it.href === altHref ? otherLang(lang) : undefined}
+          >
+            <span>{it.label}</span>
+            <small>{it.kind}</small>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="empty" data-palette-empty hidden>{t('palette.empty')}</p>
+    <p class="foot">
+      <span><kbd>↑</kbd> <kbd>↓</kbd> {t('palette.move')}</span>
+      <span><kbd>Enter</kbd> {t('palette.open')}</span>
+      <span><kbd>Esc</kbd> {t('palette.close')}</span>
+    </p>
+  </div>
+</dialog>
+
+<style>
+  .palette {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--bone);
+    width: min(580px, calc(100vw - 32px));
+    margin: 14vh auto auto;
+    overflow: visible;
+  }
+  .palette::backdrop {
+    background: rgba(5, 7, 10, 0.6);
+    backdrop-filter: blur(4px);
+  }
+  .box {
+    background: var(--asphalt);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 189, 57, 0.06);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto auto;
+    max-height: min(72vh, 600px);
+  }
+  input {
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+    color: var(--bone);
+    font: inherit;
+    font-size: 17px;
+    padding: 18px 20px;
+    outline: none;
+    width: 100%;
+  }
+  input::placeholder {
+    color: var(--fog-dim);
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 6px;
+    overflow: auto;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  li small {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fog-dim);
+    flex: none;
+  }
+  li[aria-selected='true'] {
+    background: var(--asphalt-2);
+    box-shadow: inset 3px 0 0 var(--sodium);
+  }
+  .empty {
+    padding: 16px 20px;
+    color: var(--fog);
+    font-size: 14px;
+  }
+  .foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    padding: 10px 16px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--fog-dim);
+  }
+</style>

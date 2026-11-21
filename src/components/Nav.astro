@@ -1,0 +1,145 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+import { otherLang, paths, sectionIds, useT, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  altHref: string;
+}
+const { lang, altHref } = Astro.props;
+const t = useT(lang);
+const ids = sectionIds[lang];
+const home = paths.home(lang);
+const other = otherLang(lang);
+const links = [
+  [ids.projects, t('nav.projects')],
+  [ids.stack, t('nav.stack')],
+  [ids.experience, t('nav.experience')],
+  [ids.about, t('nav.about')],
+  [ids.contact, t('nav.contact')],
+] as const;
+---
+
+<header class="nav" data-nav>
+  <div class="nav-inner wrap">
+    <a class="brand" href={home} aria-label="Samuel Chamorro">
+      <Image src={logo} alt="" width={46} loading="eager" />
+    </a>
+    <nav aria-label={lang === 'es' ? 'Secciones' : 'Sections'}>
+      <ul class="links">
+        {links.map(([id, label]) => <li><a href={`${home}#${id}`}>{label}</a></li>)}
+      </ul>
+    </nav>
+    <div class="tools">
+      <a class="lang" href={altHref} hreflang={other} lang={other}>
+        {t('nav.switchShort')}<span class="sr-only"> · {t('nav.switch')}</span>
+      </a>
+      <button class="palette-btn" type="button" data-palette-open aria-haspopup="dialog" aria-label={t('palette.label')}>
+        <span class="desk" aria-hidden="true"><kbd data-mod-key>Ctrl</kbd><kbd>K</kbd></span>
+        <span class="mob">{t('nav.menu')}</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 50;
+    transition: background-color 0.4s, backdrop-filter 0.4s, border-color 0.4s;
+    border-bottom: 1px solid transparent;
+  }
+  .nav:global(.is-scrolled) {
+    background: rgba(10, 14, 19, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom-color: var(--line);
+  }
+  .nav-inner {
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .brand {
+    margin-right: auto;
+    display: block;
+    border-radius: 6px;
+  }
+  .brand img {
+    width: 46px;
+    height: auto;
+  }
+  .links {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: clamp(16px, 2.2vw, 30px);
+  }
+  @media (min-width: 900px) {
+    .links {
+      display: flex;
+    }
+  }
+  .links a {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--fog);
+    transition: color 0.2s;
+  }
+  .links a:hover {
+    color: var(--bone);
+  }
+  .tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .lang,
+  .palette-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: transparent;
+    font-family: var(--f-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    color: var(--bone);
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .lang:hover,
+  .palette-btn:hover {
+    border-color: var(--sodium);
+  }
+  .palette-btn kbd {
+    border: 0;
+    background: none;
+    padding: 0 1px;
+    color: inherit;
+    font-size: 12px;
+  }
+  .desk {
+    display: none;
+  }
+  @media (min-width: 900px) and (hover: hover) {
+    .desk {
+      display: inline-flex;
+      gap: 5px;
+    }
+    .mob {
+      display: none;
+    }
+  }
+</style>

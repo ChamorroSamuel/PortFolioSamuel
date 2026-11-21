@@ -1,0 +1,130 @@
+---
+import { site } from '../data/site';
+import { sectionIds, useT, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useT(lang);
+const ids = sectionIds[lang];
+---
+
+<section class="hero" data-hero aria-labelledby="hero-title">
+  <canvas class="hero-canvas" data-hero-canvas aria-hidden="true"></canvas>
+  <p class="hero-fallback" aria-hidden="true"><span>Samuel</span> <span>Chamorro</span></p>
+  <div class="hero-content wrap">
+    <h1 id="hero-title" class="sr-only">{t('hero.title')}</h1>
+    <p class="eyebrow">{t('hero.kicker')}</p>
+    <p class="pitch">{t('hero.pitch')}</p>
+    <div class="ctas">
+      <a class="btn btn-sodium" href={`#${ids.projects}`}>{t('hero.cta.projects')} <span aria-hidden="true">↓</span></a>
+      <a class="btn btn-ghost" href={site.cv} target="_blank" rel="noopener">{t('hero.cta.cv')}</a>
+    </div>
+  </div>
+  <span class="scroll-hint" aria-hidden="true">{t('hero.scroll')}</span>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: clamp(620px, 100svh, 1000px);
+    display: grid;
+    align-items: end;
+    overflow: hidden;
+    touch-action: pan-y;
+    background:
+      radial-gradient(90% 60% at 78% 0%, rgba(255, 189, 57, 0.07), transparent 60%),
+      radial-gradient(120% 70% at 30% 115%, #19212b 0%, transparent 62%),
+      var(--night);
+  }
+  .hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  /* Se ve si el canvas no arranca (sin JS o mientras carga la fuente). */
+  .hero-fallback {
+    position: absolute;
+    left: max(var(--gutter), calc((100% - var(--maxw)) / 2 + var(--gutter)));
+    right: var(--gutter);
+    top: 14%;
+    font-family: var(--f-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: clamp(4.4rem, 12.5vw, 12rem);
+    line-height: 0.92;
+    color: var(--bone);
+    transition: opacity 0.8s;
+  }
+  .hero-fallback span {
+    display: inline-block;
+  }
+  .hero:global(.is-live) .hero-fallback {
+    opacity: 0;
+  }
+  .hero-content {
+    position: relative;
+    display: grid;
+    gap: 18px;
+    padding-bottom: clamp(56px, 11vh, 120px);
+    pointer-events: none;
+  }
+  .hero-content > * {
+    pointer-events: auto;
+  }
+  .pitch {
+    font-size: clamp(1.4rem, 3vw, 2.3rem);
+    line-height: 1.2;
+    max-width: 22ch;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .scroll-hint {
+    position: absolute;
+    right: var(--gutter);
+    bottom: clamp(56px, 11vh, 120px);
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fog-dim);
+    writing-mode: vertical-rl;
+    display: none;
+    align-items: center;
+    gap: 12px;
+  }
+  .scroll-hint::after {
+    content: '';
+    width: 1px;
+    height: 56px;
+    background: linear-gradient(var(--sodium), transparent);
+    animation: drip 2.4s var(--ease) infinite;
+    transform-origin: top;
+  }
+  @keyframes drip {
+    0% {
+      transform: scaleY(0);
+    }
+    60% {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scaleY(1);
+      opacity: 0;
+    }
+  }
+  @media (min-width: 900px) {
+    .scroll-hint {
+      display: flex;
+    }
+  }
+</style>
